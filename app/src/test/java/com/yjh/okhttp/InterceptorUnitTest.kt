@@ -1,11 +1,9 @@
 package com.yjh.okhttp
 
 import android.util.Log
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 import org.junit.Test
+import java.io.File
 import java.io.IOException
 
 class InterceptorUnitTest {
@@ -15,6 +13,7 @@ class InterceptorUnitTest {
     @Test
     fun interceptorTest() {
         val okHttpClient = OkHttpClient.Builder()
+            .cache(Cache(File("E:\\learn\\AndroidProject\\OkHttp"), 1024 * 1024)) //打开缓存，并设置缓存位置
             .addInterceptor(object : Interceptor {
                 override fun intercept(chain: Interceptor.Chain): Response { //intercept回调给我们一个chain对象
                     //前置处理，比如添加请求头
