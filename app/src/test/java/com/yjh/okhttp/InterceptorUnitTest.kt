@@ -10,7 +10,7 @@ import java.io.IOException
 
 class InterceptorUnitTest {
 
-    //添加拦截器，完成一些统一处理
+    //添加拦截器，完成一些发送请求时的统一处理
     //无论摆放顺序，addInterceptor比addNetworkInterceptor先执行
     @Test
     fun interceptorTest() {
