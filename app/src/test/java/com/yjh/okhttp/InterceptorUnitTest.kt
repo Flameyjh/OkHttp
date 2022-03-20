@@ -13,7 +13,7 @@ class InterceptorUnitTest {
     @Test
     fun interceptorTest() {
         val okHttpClient = OkHttpClient.Builder()
-            .cache(Cache(File("E:\\learn\\AndroidProject\\OkHttp"), 1024 * 1024)) //打开缓存，并设置缓存位置
+            .cache(Cache(File("E:\\learn\\AndroidProject\\OkHttp"), 1024 * 1024)) //打开缓存功能，并设置缓存位置
             .addInterceptor(object : Interceptor {
                 override fun intercept(chain: Interceptor.Chain): Response { //intercept回调给我们一个chain对象
                     //前置处理，比如添加请求头
